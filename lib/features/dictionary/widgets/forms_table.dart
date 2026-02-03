@@ -223,7 +223,6 @@ class _NodeView extends StatelessWidget {
         // Normal nested sections
         final entries = decoded.entries.toList();
         entries.sort((a, b) => a.key.toString().compareTo(b.key.toString()));
-        final initiallyExpandedKey = entries.isNotEmpty ? entries.first.key.toString() : null;
 
         for (final e in entries) {
           final key = e.key.toString();
@@ -239,7 +238,7 @@ class _NodeView extends StatelessWidget {
                 tilePadding: EdgeInsets.zero,
                 childrenPadding: const EdgeInsets.only(left: 8, bottom: 10),
                 title: Text(label, style: theme.textTheme.titleSmall),
-                initiallyExpanded: key == initiallyExpandedKey,
+                initiallyExpanded: false,
                 shape: const Border(),
                 collapsedShape: const Border(),
                 children: [

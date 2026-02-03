@@ -1,0 +1,452 @@
+A	akuzativ
+admin.	administracija
+agr.	agronomija
+anal.	analitički
+anat.	anatomija
+ant.	antika
+antrop.	antropologija
+aor.	aorist
+arh.	arhaizam
+arheol.	arheologija
+arhit.	arhitektura
+astron.	astronomija
+augm.	augmentativ
+autom.	automobilizam
+bal.	balistika
+bank.	bankarstvo
+bibl.	biblijski
+biol.	biologija
+Bl.	Blaženi/a
+bot.	botanika
+br.	broj
+bud.	budizam
+burz.	burza
+crkv.	crkveno
+čest.	čestica
+D	dativ
+dem.	deminutiv
+dijal.	dijalektalno
+dipl.	diplomacija, diplomatski
+dosl.	doslovno
+dv.	dvovidni
+ekol.	ekologija
+ekon.	ekonomija
+ekspr.	ekspresivno
+enkl.	enklitika, enklitički
+etn.	etnik
+etnol.	etnologija, etnološki
+eufem.	eufemizam
+fam.	familijarno
+farm.	farmacija, farmakologija
+fil.	filozofija
+filat.	filatelija
+film.	filmski
+fiz.	fizika
+fiziol.	fiziologija
+fon.	fonetika, fonetski
+G	genitiv
+gener.	generički
+genet.	genetika
+geod.	geodezija
+geogr.	geografija
+geol.	geologija
+gl.	glagol
+gl. im.	glagolska imenica
+glazb.	glazba
+gov.	govorno
+građ.	građevinarstvo
+graf.	grafika, grafički
+gram.	gramatika, gramatički
+hidr.	hidrologija
+hind.	hinduizam
+hip.	hipokoristik
+hrv.	hrvatski
+I	istok, istočno
+I	instrumental
+ideol.	ideološki
+im.	imenica
+imp.	imperativ
+impf.	imperfekt
+indekl.	indeklinabilno
+indiv.	individualno
+inform.	informatika
+int.	internet
+iron.	ironično
+isl.	islam, islamski
+izg.	izgovor
+izv.	izvedeno (od)
+J	jug, južno
+jd	jednina
+jez. knjiž.	jezik književnosti
+jud.	judaizam
+kalk.	kalkulacijski
+kat.	katolički
+kazal.	kazalište, kazališno
+kem.	kemija
+kinol.	kinologija
+knjiš.	knjiški
+knjiž.	književnost
+komp.	komparativ
+konstr.	konstruirano
+krat.	kratica
+kršć.	kršćanstvo, kršćanski
+kulin.	kulinarstvo
+l.	lice
+L	lokativ
+lik.	likovna umjetnost
+lingv.	lingvistika
+log.	logika
+lokal.	lokalno
+lov.	lovstvo, lovački
+m	muški rod
+m.	muško
+mat.	matematika, matematički
+med.	medicina, medicinski
+metaf.	metaforički
+meteor.	meteorologija
+meton.	metonimijski
+mikronim.	mikronimija
+mikrotop.	mikrotoponimija
+mil.	milijun
+min.	mineralogija
+mit.	mitologija
+Ml.	Mlađi
+mn	množina
+musl.	muslimanski
+N	nominativ
+nakn. shv.	naknadno shvaćeno
+nar. pj.	narodno pjesništvo
+neob.	neobično
+neodom.	neodomaćeno
+neodr.	neodređeni oblik
+neol.	neologizam
+nesvrš.	nesvršeni
+neutr.	neutralno
+npr.	na primjer
+o.	oko
+ob.	obično
+obl.	oblik
+odn.	odnosno
+odr.	određeni oblik
+onom.	onomatopeja
+opr.	oprečno
+orij.	orijentalno
+os.	osobno
+pat.	patologija
+pčel.	pčelarstvo
+pejor.	pejorativno
+pleon.	pleonazam
+pl. tantum 	pluralia tantum
+poč.	početkom
+podr.	podrugljivo
+poet.	poetski
+pol.	politika, politički
+pol.	polovicom
+pom.	pomorstvo
+pom. gl.	pomoćni glagol
+posl.	poslovica
+posr.	posredstvom
+potenc.	potencijalno
+pov.	povijest
+pov. umj.	povijest umjetnosti
+pr.	prezime
+pravn.	pravo, pravnički
+pravosl.	pravoslavno
+pren.	preneseno značenje
+prez.	prezent
+prid.	pridjev
+prid. rad.	pridjev radni
+prid. trp.	pridjev trpni
+prij.	prijedlog
+pr. Kr.	prije Krista
+pril.	prilog
+pril. pr.	prilog prošli
+pril. sad.	prilog sadašnji
+priv.	privreda, privredni
+prom.	promet
+psih.	psihologija
+publ.	publicistika, publicistički
+razg.	razgovorno
+red.	redni
+refer.	referencijalno
+reg.	regionalno
+rel.	religija, religijski
+retor.	retorički
+rib.	ribarstvo, ribarski
+rij.	rijetko
+rud.	rudarstvo
+S	sjever, sjeverno
+sg. tantum	singularia tantum
+slav.	slavenski
+slov.	slovenski
+služb.	službeno
+sociol.	sociologija
+sport	sport, sportski
+sr	srednji rod
+sred.	središnji
+srp.	srpski
+stan.	stanovnici
+stom.	stomatologija
+st.	stoljeće
+St.	Stariji
+supl.	supletivno
+Sv.	Sveti/a
+svrš.	svršeni
+šah	šah, šahovski
+tehn.	tehnika
+teol.	teologija, teološki
+term.	termin
+tipogr.	tipografija
+tisk.	tiskarstvo, tiskarski
+top.	toponimija
+trg.	trgovina, trgovački
+TV	televizija
+tzv.	tako zvani
+umj.	umjetnost
+usp.	usporedi
+uzv.	uzvik
+V	vokativ
+v.	vidi
+vet.	veterina
+vezn.	veznik
+vojn.	vojnički, vojni, u vojskama
+vulg.	vulgarno
+Z	zapad, zapadno
+zam.	zamjenica
+zast.	zastarjelo
+zauz. zn.	zauzeto značenje
+zb.	zbirno
+zn.	značenje
+znanstv.	znanstveno
+zool.	zoologija
+ž	ženski rod
+ž.	žensko
+žarg.	žargon, žargonski 
+afrikaans	afrikaans
+ajmara	ajmara
+akad.	akadski
+alb.	albanski
+aleut.	aleutski
+algonkijski	algonkijski
+amer.	američki
+amer.engl.	američki engleski
+amer.šp.	američki španjolski
+amhar.	amharski
+ant.	antički
+aram.	aramejski
+arap.	arapski
+aravački	aravački
+armen.	armenski
+asir.	asirski
+atički	atički
+austr.	austrijski
+austr.njem.	austrijski njemački
+austral.aboridž.	australski aboridžinski
+avar.	avarski
+avest.	avestički
+bambara	bambara
+bantu	bantu
+bask.	baskijski
+bav.	bavarski
+bengal.	bengalski
+berb.	berberski
+bizant.grč.	bizantski grčki
+bjrus.	bjeloruski
+braz.port.	brazilski portugalski
+bret.	bretonski
+bug.	bugarski
+bur.	burski
+burm.	burmanski
+cslav.	crkvenoslavenski
+češ.	češki
+dalmat.	dalmatski
+dan.	danski
+drav.	dravidski
+egip.	egipatski
+egz.	egzotično
+engl.	engleski
+esk.	eskimski
+esper.	esperanto
+etiop.	etiopski
+etrušč.	etruščanski
+fen.	fenički
+fiđ.	fiđijski (fidžijski)
+fin.	finski
+flam.	flamanski
+fr.	francuski
+fran.	franački
+furl.	furlanski
+gal.	galski
+gal.roman.	galoromanski
+gask.	gaskonjski
+germ.	germanski
+gluž.	gornjolužički
+got.	gotski
+grč.	grčki
+grnl.	grenlandski
+gruz.	gruzijski
+gudžarat.	gudžaratski
+haićanski	haićanski
+havaj.	havajski
+hebr.	hebrejski
+hetit.	hetitski
+hind.	hindski
+hotentotski	hotentotski
+ie.	indoeuropski
+ilir.	ilirski
+indij.	indijski
+indonez.	indonezijski
+inuit	inuit
+ir.	irski
+ir.gael.	irski gaelski
+iran.	iranski
+irokijski	irokijski
+island.	islandski
+istroroman.	istroromanski
+jakutski	jakutski
+jamajk.engl.	jamajski engleski
+jap.	japanski
+jav.	javanski
+jidiš	jidiš
+joruba	joruba
+kambodž.	kambodžanski
+kan.fr.	kanadski francuski
+kantonski	kantonski
+karaim.	karaimski
+karip.	karipski
+karip.šp.	karipski španjolski
+kast.	kastiljanski
+kašup.	kašupski
+katal.	katalonski
+kaz.tat.	kazanskotatarski
+kečuan.	kečuanski
+kelt.	keltski
+khmer.	khmerski
+kimbundu	kimbundu
+kin.	kineski
+kirg.	kirgiski
+kor.	korejski
+kpt.	koptski
+krim.tat.	krimski tatarski
+kub.šp.	kubanski španjolski
+kurd.	kurdski
+langobard.	langobardski
+lap.	laponski
+lat.	latinski
+lat.grč.	latinski grčki
+latv.	latvijski
+lit.	litavski
+mađ.	mađarski
+mak.	makedonski
+mal.	malajski
+mald.	maldivski
+malg.	malgaški
+maor.	maorski
+mediteran.	mediteranski
+meks.šp.	meksički španjolski
+mjanmar	mjanmar
+mlet.	venecijanski (mletački) talijanski
+mong.	mongolski
+mujan.	mujanski
+nahuatl	nahuatl
+neoskr.	neosanskrtski
+ngrč.	novogrčki
+nindij.	novoindijski
+nizoz.	nizozemski
+nlat.	novolatinski
+nord.	nordijski
+norv.	norveški
+njem.	njemački
+oset.	osetski
+pali	pali
+perz.	perzijski
+polinez.	polinezijski
+polj.	poljski
+port.	portugalski
+post.bibl.hebr.	postbiblijski hebrejski
+prasl.	praslavenski
+predslav.	predslavenski
+protobug.	protobugarski
+prov.	provansalski
+pseudolat.	pseudolatinski
+pseudošp.	pseudošpanjolski
+punski	punski
+rom.	romski
+roman.	romanski
+rum.	rumunjski
+rus.	ruski
+rus.cslav.	ruskocrkvenoslavenski
+rusin.	rusinski
+samoan.	samoanski
+sicil.	sicilijanski
+sinh.	sinhalski (sinhaleški)
+sjevtal.	sjevernotalijanski
+skand.	skandinavski
+skr.	sanskrtski
+sl.	slovački
+slav.	slavenski
+slov.	slovenski
+somalijski	somalijski
+srednjoindij.	srednjoindijski
+srengl.	srednjovjekovni engleski
+srfr.	srednjovjekovni francuski
+srgrč.	srednjovjekovni grčki
+srir.	srednjovjekovni irski
+srlat.	srednjovjekovni latinski
+srnnjem.	srednjoniskonjemački
+srp.	srpski
+srprov.	srednjovjekovni provansalski
+srvnjem.	srednjovisokonjemački
+stčeš.	staročeški
+stegip.	staroegipatski
+stengl.	staroengleski
+stfr.	starofrancuski
+stgrč.	starogrčki
+stindij.	staroindijski
+stir.	staroirski
+stisland.	staroislandski
+stlit.	starolitvanski
+stnizoz.	staronizozemski
+stnord.	staronordijski
+stnorv.	staronorveški
+stperz.	staroperzijski
+stpolj.	staropoljski
+stprov.	staroprovansalski
+stprus.	staropruski
+strcsl.	starocrkvenoslavenski
+strus.	staroruski
+stskand.	staroskandinavski
+stsl.	staroslavenski
+stšp.	starošpanjolski
+sttal.	starotalijanski
+sttur.	staroturski
+stvnjem.	starovisokonjemački
+sudanski	sudanski
+škot.	škotski
+škot.gael.	škotski gaelski
+škot.gal.	škotsko-galski
+šp.	španjolski
+švap.	švapski
+šved.	švedski
+švic.njem.	švicarski njemački
+tadž.	tadžički
+tagalog	tagalog
+taj.	tajski
+tajl.	tajlandski
+tal.	talijanski
+tamil.	tamilski
+tat.	tatarski
+tibet.	tibetski
+tohar.	toharski
+trački	trački
+tupi	tupi
+tur.	turski
+tur.tat.	turskotatarski
+turk.	turkijski
+turkm.	turkmenski
+ukr.	ukrajinski
+urd.	urdski
+velš.	velški
+vijandot	vijandot
+vijetn.	vijetnamski
+zulu 	zulu

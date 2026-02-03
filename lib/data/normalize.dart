@@ -1,20 +1,18 @@
+import 'package:diacritic/diacritic.dart';
+
 String normalize(String input) {
   var s = input.trim().toLowerCase();
   if (s.isEmpty) return s;
 
-  const map = <String, String>{
-    'č': 'c',
-    'ć': 'c',
-    'đ': 'd',
-    'š': 's',
-    'ž': 'z',
-  };
+  // Remove all diacritics (á, è, ȁ, č, ć, đ, š, ž, etc.)
+  s = removeDiacritics(s);
 
-  final sb = StringBuffer();
-  for (final rune in s.runes) {
-    final ch = String.fromCharCode(rune);
-    sb.write(map[ch] ?? ch);
-  }
+  // Croatian-specific mapping (removeDiacritics already covers most)
+  s = s
+      .replaceAll('đ', 'd')
+      .replaceAll('Đ', 'd')
+      .replaceAll(RegExp(r'\s+'), ' ')
+      .trim();
 
-  return sb.toString().replaceAll(RegExp(r'\s+'), ' ');
+  return s;
 }

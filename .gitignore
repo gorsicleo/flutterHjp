@@ -1,6 +1,8 @@
 ###########################
 # Flutter / Dart (multi-OS)
 ###########################
+# Ommited due to missing public licence
+dictionary.sqlite
 
 # Flutter & Dart tool directories
 .dart_tool/

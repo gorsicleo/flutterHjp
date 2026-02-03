@@ -1,0 +1,1796 @@
+{
+  "abbr": {
+    "A": {
+      "kind": "label",
+      "meaning": "akuzativ"
+    },
+    "admin.": {
+      "kind": "label",
+      "meaning": "administracija"
+    },
+    "agr.": {
+      "kind": "label",
+      "meaning": "agronomija"
+    },
+    "anal.": {
+      "kind": "label",
+      "meaning": "analitički"
+    },
+    "anat.": {
+      "kind": "label",
+      "meaning": "anatomija"
+    },
+    "ant.": {
+      "kind": "label",
+      "meaning": [
+        "antika",
+        "antički"
+      ]
+    },
+    "antrop.": {
+      "kind": "label",
+      "meaning": "antropologija"
+    },
+    "aor.": {
+      "kind": "label",
+      "meaning": "aorist"
+    },
+    "arh.": {
+      "kind": "label",
+      "meaning": "arhaizam"
+    },
+    "arheol.": {
+      "kind": "label",
+      "meaning": "arheologija"
+    },
+    "arhit.": {
+      "kind": "label",
+      "meaning": "arhitektura"
+    },
+    "astron.": {
+      "kind": "label",
+      "meaning": "astronomija"
+    },
+    "augm.": {
+      "kind": "label",
+      "meaning": "augmentativ"
+    },
+    "autom.": {
+      "kind": "label",
+      "meaning": "automobilizam"
+    },
+    "bal.": {
+      "kind": "label",
+      "meaning": "balistika"
+    },
+    "bank.": {
+      "kind": "label",
+      "meaning": "bankarstvo"
+    },
+    "bibl.": {
+      "kind": "label",
+      "meaning": "biblijski"
+    },
+    "biol.": {
+      "kind": "label",
+      "meaning": "biologija"
+    },
+    "Bl.": {
+      "kind": "label",
+      "meaning": "Blaženi/a"
+    },
+    "bot.": {
+      "kind": "label",
+      "meaning": "botanika"
+    },
+    "br.": {
+      "kind": "label",
+      "meaning": "broj"
+    },
+    "bud.": {
+      "kind": "label",
+      "meaning": "budizam"
+    },
+    "burz.": {
+      "kind": "label",
+      "meaning": "burza"
+    },
+    "crkv.": {
+      "kind": "label",
+      "meaning": "crkveno"
+    },
+    "čest.": {
+      "kind": "label",
+      "meaning": "čestica"
+    },
+    "D": {
+      "kind": "label",
+      "meaning": "dativ"
+    },
+    "dem.": {
+      "kind": "label",
+      "meaning": "deminutiv"
+    },
+    "dijal.": {
+      "kind": "label",
+      "meaning": "dijalektalno"
+    },
+    "dipl.": {
+      "kind": "label",
+      "meaning": "diplomacija, diplomatski"
+    },
+    "dosl.": {
+      "kind": "label",
+      "meaning": "doslovno"
+    },
+    "dv.": {
+      "kind": "label",
+      "meaning": "dvovidni"
+    },
+    "ekol.": {
+      "kind": "label",
+      "meaning": "ekologija"
+    },
+    "ekon.": {
+      "kind": "label",
+      "meaning": "ekonomija"
+    },
+    "ekspr.": {
+      "kind": "label",
+      "meaning": "ekspresivno"
+    },
+    "enkl.": {
+      "kind": "label",
+      "meaning": "enklitika, enklitički"
+    },
+    "etn.": {
+      "kind": "label",
+      "meaning": "etnik"
+    },
+    "etnol.": {
+      "kind": "label",
+      "meaning": "etnologija, etnološki"
+    },
+    "eufem.": {
+      "kind": "label",
+      "meaning": "eufemizam"
+    },
+    "fam.": {
+      "kind": "label",
+      "meaning": "familijarno"
+    },
+    "farm.": {
+      "kind": "label",
+      "meaning": "farmacija, farmakologija"
+    },
+    "fil.": {
+      "kind": "label",
+      "meaning": "filozofija"
+    },
+    "filat.": {
+      "kind": "label",
+      "meaning": "filatelija"
+    },
+    "film.": {
+      "kind": "label",
+      "meaning": "filmski"
+    },
+    "fiz.": {
+      "kind": "label",
+      "meaning": "fizika"
+    },
+    "fiziol.": {
+      "kind": "label",
+      "meaning": "fiziologija"
+    },
+    "fon.": {
+      "kind": "label",
+      "meaning": "fonetika, fonetski"
+    },
+    "G": {
+      "kind": "label",
+      "meaning": "genitiv"
+    },
+    "gener.": {
+      "kind": "label",
+      "meaning": "generički"
+    },
+    "genet.": {
+      "kind": "label",
+      "meaning": "genetika"
+    },
+    "geod.": {
+      "kind": "label",
+      "meaning": "geodezija"
+    },
+    "geogr.": {
+      "kind": "label",
+      "meaning": "geografija"
+    },
+    "geol.": {
+      "kind": "label",
+      "meaning": "geologija"
+    },
+    "gl.": {
+      "kind": "label",
+      "meaning": "glagol"
+    },
+    "gl. im.": {
+      "kind": "label",
+      "meaning": "glagolska imenica"
+    },
+    "glazb.": {
+      "kind": "label",
+      "meaning": "glazba"
+    },
+    "gov.": {
+      "kind": "label",
+      "meaning": "govorno"
+    },
+    "građ.": {
+      "kind": "label",
+      "meaning": "građevinarstvo"
+    },
+    "graf.": {
+      "kind": "label",
+      "meaning": "grafika, grafički"
+    },
+    "gram.": {
+      "kind": "label",
+      "meaning": "gramatika, gramatički"
+    },
+    "hidr.": {
+      "kind": "label",
+      "meaning": "hidrologija"
+    },
+    "hind.": {
+      "kind": "label",
+      "meaning": [
+        "hinduizam",
+        "hindski"
+      ]
+    },
+    "hip.": {
+      "kind": "label",
+      "meaning": "hipokoristik"
+    },
+    "hrv.": {
+      "kind": "label",
+      "meaning": "hrvatski"
+    },
+    "I": {
+      "kind": "label",
+      "meaning": [
+        "istok, istočno",
+        "instrumental"
+      ]
+    },
+    "ideol.": {
+      "kind": "label",
+      "meaning": "ideološki"
+    },
+    "im.": {
+      "kind": "label",
+      "meaning": "imenica"
+    },
+    "imp.": {
+      "kind": "label",
+      "meaning": "imperativ"
+    },
+    "impf.": {
+      "kind": "label",
+      "meaning": "imperfekt"
+    },
+    "indekl.": {
+      "kind": "label",
+      "meaning": "indeklinabilno"
+    },
+    "indiv.": {
+      "kind": "label",
+      "meaning": "individualno"
+    },
+    "inform.": {
+      "kind": "label",
+      "meaning": "informatika"
+    },
+    "int.": {
+      "kind": "label",
+      "meaning": "internet"
+    },
+    "iron.": {
+      "kind": "label",
+      "meaning": "ironično"
+    },
+    "isl.": {
+      "kind": "label",
+      "meaning": "islam, islamski"
+    },
+    "izg.": {
+      "kind": "label",
+      "meaning": "izgovor"
+    },
+    "izv.": {
+      "kind": "relation",
+      "meaning": "izvedeno (od)"
+    },
+    "J": {
+      "kind": "label",
+      "meaning": "jug, južno"
+    },
+    "jd": {
+      "kind": "label",
+      "meaning": "jednina"
+    },
+    "jez. knjiž.": {
+      "kind": "label",
+      "meaning": "jezik književnosti"
+    },
+    "jud.": {
+      "kind": "label",
+      "meaning": "judaizam"
+    },
+    "kalk.": {
+      "kind": "label",
+      "meaning": "kalkulacijski"
+    },
+    "kat.": {
+      "kind": "label",
+      "meaning": "katolički"
+    },
+    "kazal.": {
+      "kind": "label",
+      "meaning": "kazalište, kazališno"
+    },
+    "kem.": {
+      "kind": "label",
+      "meaning": "kemija"
+    },
+    "kinol.": {
+      "kind": "label",
+      "meaning": "kinologija"
+    },
+    "knjiš.": {
+      "kind": "label",
+      "meaning": "knjiški"
+    },
+    "knjiž.": {
+      "kind": "label",
+      "meaning": "književnost"
+    },
+    "komp.": {
+      "kind": "label",
+      "meaning": "komparativ"
+    },
+    "konstr.": {
+      "kind": "label",
+      "meaning": "konstruirano"
+    },
+    "krat.": {
+      "kind": "label",
+      "meaning": "kratica"
+    },
+    "kršć.": {
+      "kind": "label",
+      "meaning": "kršćanstvo, kršćanski"
+    },
+    "kulin.": {
+      "kind": "label",
+      "meaning": "kulinarstvo"
+    },
+    "l.": {
+      "kind": "label",
+      "meaning": "lice"
+    },
+    "L": {
+      "kind": "label",
+      "meaning": "lokativ"
+    },
+    "lik.": {
+      "kind": "label",
+      "meaning": "likovna umjetnost"
+    },
+    "lingv.": {
+      "kind": "label",
+      "meaning": "lingvistika"
+    },
+    "log.": {
+      "kind": "label",
+      "meaning": "logika"
+    },
+    "lokal.": {
+      "kind": "label",
+      "meaning": "lokalno"
+    },
+    "lov.": {
+      "kind": "label",
+      "meaning": "lovstvo, lovački"
+    },
+    "m": {
+      "kind": "label",
+      "meaning": "muški rod"
+    },
+    "m.": {
+      "kind": "label",
+      "meaning": "muško"
+    },
+    "mat.": {
+      "kind": "label",
+      "meaning": "matematika, matematički"
+    },
+    "med.": {
+      "kind": "label",
+      "meaning": "medicina, medicinski"
+    },
+    "metaf.": {
+      "kind": "label",
+      "meaning": "metaforički"
+    },
+    "meteor.": {
+      "kind": "label",
+      "meaning": "meteorologija"
+    },
+    "meton.": {
+      "kind": "label",
+      "meaning": "metonimijski"
+    },
+    "mikronim.": {
+      "kind": "label",
+      "meaning": "mikronimija"
+    },
+    "mikrotop.": {
+      "kind": "label",
+      "meaning": "mikrotoponimija"
+    },
+    "mil.": {
+      "kind": "label",
+      "meaning": "milijun"
+    },
+    "min.": {
+      "kind": "label",
+      "meaning": "mineralogija"
+    },
+    "mit.": {
+      "kind": "label",
+      "meaning": "mitologija"
+    },
+    "Ml.": {
+      "kind": "label",
+      "meaning": "Mlađi"
+    },
+    "mn": {
+      "kind": "label",
+      "meaning": "množina"
+    },
+    "musl.": {
+      "kind": "label",
+      "meaning": "muslimanski"
+    },
+    "N": {
+      "kind": "label",
+      "meaning": "nominativ"
+    },
+    "nakn. shv.": {
+      "kind": "label",
+      "meaning": "naknadno shvaćeno"
+    },
+    "nar. pj.": {
+      "kind": "label",
+      "meaning": "narodno pjesništvo"
+    },
+    "neob.": {
+      "kind": "label",
+      "meaning": "neobično"
+    },
+    "neodom.": {
+      "kind": "label",
+      "meaning": "neodomaćeno"
+    },
+    "neodr.": {
+      "kind": "label",
+      "meaning": "neodređeni oblik"
+    },
+    "neol.": {
+      "kind": "label",
+      "meaning": "neologizam"
+    },
+    "nesvrš.": {
+      "kind": "label",
+      "meaning": "nesvršeni"
+    },
+    "neutr.": {
+      "kind": "label",
+      "meaning": "neutralno"
+    },
+    "npr.": {
+      "kind": "label",
+      "meaning": "na primjer"
+    },
+    "o.": {
+      "kind": "label",
+      "meaning": "oko"
+    },
+    "ob.": {
+      "kind": "label",
+      "meaning": "obično"
+    },
+    "obl.": {
+      "kind": "label",
+      "meaning": "oblik"
+    },
+    "odn.": {
+      "kind": "label",
+      "meaning": "odnosno"
+    },
+    "odr.": {
+      "kind": "label",
+      "meaning": "određeni oblik"
+    },
+    "onom.": {
+      "kind": "label",
+      "meaning": "onomatopeja"
+    },
+    "opr.": {
+      "kind": "relation",
+      "meaning": "oprečno"
+    },
+    "orij.": {
+      "kind": "label",
+      "meaning": "orijentalno"
+    },
+    "os.": {
+      "kind": "label",
+      "meaning": "osobno"
+    },
+    "pat.": {
+      "kind": "label",
+      "meaning": "patologija"
+    },
+    "pčel.": {
+      "kind": "label",
+      "meaning": "pčelarstvo"
+    },
+    "pejor.": {
+      "kind": "label",
+      "meaning": "pejorativno"
+    },
+    "pleon.": {
+      "kind": "label",
+      "meaning": "pleonazam"
+    },
+    "pl. tantum": {
+      "kind": "label",
+      "meaning": "pluralia tantum"
+    },
+    "poč.": {
+      "kind": "label",
+      "meaning": "početkom"
+    },
+    "podr.": {
+      "kind": "label",
+      "meaning": "podrugljivo"
+    },
+    "poet.": {
+      "kind": "label",
+      "meaning": "poetski"
+    },
+    "pol.": {
+      "kind": "label",
+      "meaning": [
+        "politika, politički",
+        "polovicom"
+      ]
+    },
+    "pom.": {
+      "kind": "label",
+      "meaning": "pomorstvo"
+    },
+    "pom. gl.": {
+      "kind": "label",
+      "meaning": "pomoćni glagol"
+    },
+    "posl.": {
+      "kind": "label",
+      "meaning": "poslovica"
+    },
+    "posr.": {
+      "kind": "label",
+      "meaning": "posredstvom"
+    },
+    "potenc.": {
+      "kind": "label",
+      "meaning": "potencijalno"
+    },
+    "pov.": {
+      "kind": "label",
+      "meaning": "povijest"
+    },
+    "pov. umj.": {
+      "kind": "label",
+      "meaning": "povijest umjetnosti"
+    },
+    "pr.": {
+      "kind": "label",
+      "meaning": "prezime"
+    },
+    "pravn.": {
+      "kind": "label",
+      "meaning": "pravo, pravnički"
+    },
+    "pravosl.": {
+      "kind": "label",
+      "meaning": "pravoslavno"
+    },
+    "pren.": {
+      "kind": "label",
+      "meaning": "preneseno značenje"
+    },
+    "prez.": {
+      "kind": "label",
+      "meaning": "prezent"
+    },
+    "prid.": {
+      "kind": "label",
+      "meaning": "pridjev"
+    },
+    "prid. rad.": {
+      "kind": "label",
+      "meaning": "pridjev radni"
+    },
+    "prid. trp.": {
+      "kind": "label",
+      "meaning": "pridjev trpni"
+    },
+    "prij.": {
+      "kind": "label",
+      "meaning": "prijedlog"
+    },
+    "pr. Kr.": {
+      "kind": "label",
+      "meaning": "prije Krista"
+    },
+    "pril.": {
+      "kind": "label",
+      "meaning": "prilog"
+    },
+    "pril. pr.": {
+      "kind": "label",
+      "meaning": "prilog prošli"
+    },
+    "pril. sad.": {
+      "kind": "label",
+      "meaning": "prilog sadašnji"
+    },
+    "priv.": {
+      "kind": "label",
+      "meaning": "privreda, privredni"
+    },
+    "prom.": {
+      "kind": "label",
+      "meaning": "promet"
+    },
+    "psih.": {
+      "kind": "label",
+      "meaning": "psihologija"
+    },
+    "publ.": {
+      "kind": "label",
+      "meaning": "publicistika, publicistički"
+    },
+    "razg.": {
+      "kind": "label",
+      "meaning": "razgovorno"
+    },
+    "red.": {
+      "kind": "label",
+      "meaning": "redni"
+    },
+    "refer.": {
+      "kind": "label",
+      "meaning": "referencijalno"
+    },
+    "reg.": {
+      "kind": "label",
+      "meaning": "regionalno"
+    },
+    "rel.": {
+      "kind": "label",
+      "meaning": "religija, religijski"
+    },
+    "retor.": {
+      "kind": "label",
+      "meaning": "retorički"
+    },
+    "rib.": {
+      "kind": "label",
+      "meaning": "ribarstvo, ribarski"
+    },
+    "rij.": {
+      "kind": "label",
+      "meaning": "rijetko"
+    },
+    "rud.": {
+      "kind": "label",
+      "meaning": "rudarstvo"
+    },
+    "S": {
+      "kind": "label",
+      "meaning": "sjever, sjeverno"
+    },
+    "sg. tantum": {
+      "kind": "label",
+      "meaning": "singularia tantum"
+    },
+    "slav.": {
+      "kind": "label",
+      "meaning": "slavenski"
+    },
+    "slov.": {
+      "kind": "label",
+      "meaning": "slovenski"
+    },
+    "služb.": {
+      "kind": "label",
+      "meaning": "službeno"
+    },
+    "sociol.": {
+      "kind": "label",
+      "meaning": "sociologija"
+    },
+    "sport": {
+      "kind": "label",
+      "meaning": "sport, sportski"
+    },
+    "sr": {
+      "kind": "label",
+      "meaning": "srednji rod"
+    },
+    "sred.": {
+      "kind": "label",
+      "meaning": "središnji"
+    },
+    "srp.": {
+      "kind": "label",
+      "meaning": "srpski"
+    },
+    "stan.": {
+      "kind": "label",
+      "meaning": "stanovnici"
+    },
+    "stom.": {
+      "kind": "label",
+      "meaning": "stomatologija"
+    },
+    "st.": {
+      "kind": "label",
+      "meaning": "stoljeće"
+    },
+    "St.": {
+      "kind": "label",
+      "meaning": "Stariji"
+    },
+    "supl.": {
+      "kind": "label",
+      "meaning": "supletivno"
+    },
+    "Sv.": {
+      "kind": "label",
+      "meaning": "Sveti/a"
+    },
+    "svrš.": {
+      "kind": "label",
+      "meaning": "svršeni"
+    },
+    "šah": {
+      "kind": "label",
+      "meaning": "šah, šahovski"
+    },
+    "tehn.": {
+      "kind": "label",
+      "meaning": "tehnika"
+    },
+    "teol.": {
+      "kind": "label",
+      "meaning": "teologija, teološki"
+    },
+    "term.": {
+      "kind": "label",
+      "meaning": "termin"
+    },
+    "tipogr.": {
+      "kind": "label",
+      "meaning": "tipografija"
+    },
+    "tisk.": {
+      "kind": "label",
+      "meaning": "tiskarstvo, tiskarski"
+    },
+    "top.": {
+      "kind": "label",
+      "meaning": "toponimija"
+    },
+    "trg.": {
+      "kind": "label",
+      "meaning": "trgovina, trgovački"
+    },
+    "TV": {
+      "kind": "label",
+      "meaning": "televizija"
+    },
+    "tzv.": {
+      "kind": "label",
+      "meaning": "tako zvani"
+    },
+    "umj.": {
+      "kind": "label",
+      "meaning": "umjetnost"
+    },
+    "usp.": {
+      "kind": "relation",
+      "meaning": "usporedi"
+    },
+    "uzv.": {
+      "kind": "label",
+      "meaning": "uzvik"
+    },
+    "V": {
+      "kind": "label",
+      "meaning": "vokativ"
+    },
+    "v.": {
+      "kind": "relation",
+      "meaning": "vidi"
+    },
+    "vet.": {
+      "kind": "label",
+      "meaning": "veterina"
+    },
+    "vezn.": {
+      "kind": "label",
+      "meaning": "veznik"
+    },
+    "vojn.": {
+      "kind": "label",
+      "meaning": "vojnički, vojni, u vojskama"
+    },
+    "vulg.": {
+      "kind": "label",
+      "meaning": "vulgarno"
+    },
+    "Z": {
+      "kind": "label",
+      "meaning": "zapad, zapadno"
+    },
+    "zam.": {
+      "kind": "label",
+      "meaning": "zamjenica"
+    },
+    "zast.": {
+      "kind": "label",
+      "meaning": "zastarjelo"
+    },
+    "zauz. zn.": {
+      "kind": "label",
+      "meaning": "zauzeto značenje"
+    },
+    "zb.": {
+      "kind": "label",
+      "meaning": "zbirno"
+    },
+    "zn.": {
+      "kind": "label",
+      "meaning": "značenje"
+    },
+    "znanstv.": {
+      "kind": "label",
+      "meaning": "znanstveno"
+    },
+    "zool.": {
+      "kind": "label",
+      "meaning": "zoologija"
+    },
+    "ž": {
+      "kind": "label",
+      "meaning": "ženski rod"
+    },
+    "ž.": {
+      "kind": "label",
+      "meaning": "žensko"
+    },
+    "žarg.": {
+      "kind": "label",
+      "meaning": "žargon, žargonski"
+    },
+    "afrikaans": {
+      "kind": "label",
+      "meaning": "afrikaans"
+    },
+    "ajmara": {
+      "kind": "label",
+      "meaning": "ajmara"
+    },
+    "akad.": {
+      "kind": "label",
+      "meaning": "akadski"
+    },
+    "alb.": {
+      "kind": "label",
+      "meaning": "albanski"
+    },
+    "aleut.": {
+      "kind": "label",
+      "meaning": "aleutski"
+    },
+    "algonkijski": {
+      "kind": "label",
+      "meaning": "algonkijski"
+    },
+    "amer.": {
+      "kind": "label",
+      "meaning": "američki"
+    },
+    "amer.engl.": {
+      "kind": "label",
+      "meaning": "američki engleski"
+    },
+    "amer.šp.": {
+      "kind": "label",
+      "meaning": "američki španjolski"
+    },
+    "amhar.": {
+      "kind": "label",
+      "meaning": "amharski"
+    },
+    "aram.": {
+      "kind": "label",
+      "meaning": "aramejski"
+    },
+    "arap.": {
+      "kind": "label",
+      "meaning": "arapski"
+    },
+    "aravački": {
+      "kind": "label",
+      "meaning": "aravački"
+    },
+    "armen.": {
+      "kind": "label",
+      "meaning": "armenski"
+    },
+    "asir.": {
+      "kind": "label",
+      "meaning": "asirski"
+    },
+    "atički": {
+      "kind": "label",
+      "meaning": "atički"
+    },
+    "austr.": {
+      "kind": "label",
+      "meaning": "austrijski"
+    },
+    "austr.njem.": {
+      "kind": "label",
+      "meaning": "austrijski njemački"
+    },
+    "austral.aboridž.": {
+      "kind": "label",
+      "meaning": "australski aboridžinski"
+    },
+    "avar.": {
+      "kind": "label",
+      "meaning": "avarski"
+    },
+    "avest.": {
+      "kind": "label",
+      "meaning": "avestički"
+    },
+    "bambara": {
+      "kind": "label",
+      "meaning": "bambara"
+    },
+    "bantu": {
+      "kind": "label",
+      "meaning": "bantu"
+    },
+    "bask.": {
+      "kind": "label",
+      "meaning": "baskijski"
+    },
+    "bav.": {
+      "kind": "label",
+      "meaning": "bavarski"
+    },
+    "bengal.": {
+      "kind": "label",
+      "meaning": "bengalski"
+    },
+    "berb.": {
+      "kind": "label",
+      "meaning": "berberski"
+    },
+    "bizant.grč.": {
+      "kind": "label",
+      "meaning": "bizantski grčki"
+    },
+    "bjrus.": {
+      "kind": "label",
+      "meaning": "bjeloruski"
+    },
+    "braz.port.": {
+      "kind": "label",
+      "meaning": "brazilski portugalski"
+    },
+    "bret.": {
+      "kind": "label",
+      "meaning": "bretonski"
+    },
+    "bug.": {
+      "kind": "label",
+      "meaning": "bugarski"
+    },
+    "bur.": {
+      "kind": "label",
+      "meaning": "burski"
+    },
+    "burm.": {
+      "kind": "label",
+      "meaning": "burmanski"
+    },
+    "cslav.": {
+      "kind": "label",
+      "meaning": "crkvenoslavenski"
+    },
+    "češ.": {
+      "kind": "label",
+      "meaning": "češki"
+    },
+    "dalmat.": {
+      "kind": "label",
+      "meaning": "dalmatski"
+    },
+    "dan.": {
+      "kind": "label",
+      "meaning": "danski"
+    },
+    "drav.": {
+      "kind": "label",
+      "meaning": "dravidski"
+    },
+    "egip.": {
+      "kind": "label",
+      "meaning": "egipatski"
+    },
+    "egz.": {
+      "kind": "label",
+      "meaning": "egzotično"
+    },
+    "engl.": {
+      "kind": "label",
+      "meaning": "engleski"
+    },
+    "esk.": {
+      "kind": "label",
+      "meaning": "eskimski"
+    },
+    "esper.": {
+      "kind": "label",
+      "meaning": "esperanto"
+    },
+    "etiop.": {
+      "kind": "label",
+      "meaning": "etiopski"
+    },
+    "etrušč.": {
+      "kind": "label",
+      "meaning": "etruščanski"
+    },
+    "fen.": {
+      "kind": "label",
+      "meaning": "fenički"
+    },
+    "fiđ.": {
+      "kind": "label",
+      "meaning": "fiđijski (fidžijski)"
+    },
+    "fin.": {
+      "kind": "label",
+      "meaning": "finski"
+    },
+    "flam.": {
+      "kind": "label",
+      "meaning": "flamanski"
+    },
+    "fr.": {
+      "kind": "label",
+      "meaning": "francuski"
+    },
+    "fran.": {
+      "kind": "label",
+      "meaning": "franački"
+    },
+    "furl.": {
+      "kind": "label",
+      "meaning": "furlanski"
+    },
+    "gal.": {
+      "kind": "label",
+      "meaning": "galski"
+    },
+    "gal.roman.": {
+      "kind": "label",
+      "meaning": "galoromanski"
+    },
+    "gask.": {
+      "kind": "label",
+      "meaning": "gaskonjski"
+    },
+    "germ.": {
+      "kind": "label",
+      "meaning": "germanski"
+    },
+    "gluž.": {
+      "kind": "label",
+      "meaning": "gornjolužički"
+    },
+    "got.": {
+      "kind": "label",
+      "meaning": "gotski"
+    },
+    "grč.": {
+      "kind": "label",
+      "meaning": "grčki"
+    },
+    "grnl.": {
+      "kind": "label",
+      "meaning": "grenlandski"
+    },
+    "gruz.": {
+      "kind": "label",
+      "meaning": "gruzijski"
+    },
+    "gudžarat.": {
+      "kind": "label",
+      "meaning": "gudžaratski"
+    },
+    "haićanski": {
+      "kind": "label",
+      "meaning": "haićanski"
+    },
+    "havaj.": {
+      "kind": "label",
+      "meaning": "havajski"
+    },
+    "hebr.": {
+      "kind": "label",
+      "meaning": "hebrejski"
+    },
+    "hetit.": {
+      "kind": "label",
+      "meaning": "hetitski"
+    },
+    "hotentotski": {
+      "kind": "label",
+      "meaning": "hotentotski"
+    },
+    "ie.": {
+      "kind": "label",
+      "meaning": "indoeuropski"
+    },
+    "ilir.": {
+      "kind": "label",
+      "meaning": "ilirski"
+    },
+    "indij.": {
+      "kind": "label",
+      "meaning": "indijski"
+    },
+    "indonez.": {
+      "kind": "label",
+      "meaning": "indonezijski"
+    },
+    "inuit": {
+      "kind": "label",
+      "meaning": "inuit"
+    },
+    "ir.": {
+      "kind": "label",
+      "meaning": "irski"
+    },
+    "ir.gael.": {
+      "kind": "label",
+      "meaning": "irski gaelski"
+    },
+    "iran.": {
+      "kind": "label",
+      "meaning": "iranski"
+    },
+    "irokijski": {
+      "kind": "label",
+      "meaning": "irokijski"
+    },
+    "island.": {
+      "kind": "label",
+      "meaning": "islandski"
+    },
+    "istroroman.": {
+      "kind": "label",
+      "meaning": "istroromanski"
+    },
+    "jakutski": {
+      "kind": "label",
+      "meaning": "jakutski"
+    },
+    "jamajk.engl.": {
+      "kind": "label",
+      "meaning": "jamajski engleski"
+    },
+    "jap.": {
+      "kind": "label",
+      "meaning": "japanski"
+    },
+    "jav.": {
+      "kind": "label",
+      "meaning": "javanski"
+    },
+    "jidiš": {
+      "kind": "label",
+      "meaning": "jidiš"
+    },
+    "joruba": {
+      "kind": "label",
+      "meaning": "joruba"
+    },
+    "kambodž.": {
+      "kind": "label",
+      "meaning": "kambodžanski"
+    },
+    "kan.fr.": {
+      "kind": "label",
+      "meaning": "kanadski francuski"
+    },
+    "kantonski": {
+      "kind": "label",
+      "meaning": "kantonski"
+    },
+    "karaim.": {
+      "kind": "label",
+      "meaning": "karaimski"
+    },
+    "karip.": {
+      "kind": "label",
+      "meaning": "karipski"
+    },
+    "karip.šp.": {
+      "kind": "label",
+      "meaning": "karipski španjolski"
+    },
+    "kast.": {
+      "kind": "label",
+      "meaning": "kastiljanski"
+    },
+    "kašup.": {
+      "kind": "label",
+      "meaning": "kašupski"
+    },
+    "katal.": {
+      "kind": "label",
+      "meaning": "katalonski"
+    },
+    "kaz.tat.": {
+      "kind": "label",
+      "meaning": "kazanskotatarski"
+    },
+    "kečuan.": {
+      "kind": "label",
+      "meaning": "kečuanski"
+    },
+    "kelt.": {
+      "kind": "label",
+      "meaning": "keltski"
+    },
+    "khmer.": {
+      "kind": "label",
+      "meaning": "khmerski"
+    },
+    "kimbundu": {
+      "kind": "label",
+      "meaning": "kimbundu"
+    },
+    "kin.": {
+      "kind": "label",
+      "meaning": "kineski"
+    },
+    "kirg.": {
+      "kind": "label",
+      "meaning": "kirgiski"
+    },
+    "kor.": {
+      "kind": "label",
+      "meaning": "korejski"
+    },
+    "kpt.": {
+      "kind": "label",
+      "meaning": "koptski"
+    },
+    "krim.tat.": {
+      "kind": "label",
+      "meaning": "krimski tatarski"
+    },
+    "kub.šp.": {
+      "kind": "label",
+      "meaning": "kubanski španjolski"
+    },
+    "kurd.": {
+      "kind": "label",
+      "meaning": "kurdski"
+    },
+    "langobard.": {
+      "kind": "label",
+      "meaning": "langobardski"
+    },
+    "lap.": {
+      "kind": "label",
+      "meaning": "laponski"
+    },
+    "lat.": {
+      "kind": "label",
+      "meaning": "latinski"
+    },
+    "lat.grč.": {
+      "kind": "label",
+      "meaning": "latinski grčki"
+    },
+    "latv.": {
+      "kind": "label",
+      "meaning": "latvijski"
+    },
+    "lit.": {
+      "kind": "label",
+      "meaning": "litavski"
+    },
+    "mađ.": {
+      "kind": "label",
+      "meaning": "mađarski"
+    },
+    "mak.": {
+      "kind": "label",
+      "meaning": "makedonski"
+    },
+    "mal.": {
+      "kind": "label",
+      "meaning": "malajski"
+    },
+    "mald.": {
+      "kind": "label",
+      "meaning": "maldivski"
+    },
+    "malg.": {
+      "kind": "label",
+      "meaning": "malgaški"
+    },
+    "maor.": {
+      "kind": "label",
+      "meaning": "maorski"
+    },
+    "mediteran.": {
+      "kind": "label",
+      "meaning": "mediteranski"
+    },
+    "meks.šp.": {
+      "kind": "label",
+      "meaning": "meksički španjolski"
+    },
+    "mjanmar": {
+      "kind": "label",
+      "meaning": "mjanmar"
+    },
+    "mlet.": {
+      "kind": "label",
+      "meaning": "venecijanski (mletački) talijanski"
+    },
+    "mong.": {
+      "kind": "label",
+      "meaning": "mongolski"
+    },
+    "mujan.": {
+      "kind": "label",
+      "meaning": "mujanski"
+    },
+    "nahuatl": {
+      "kind": "label",
+      "meaning": "nahuatl"
+    },
+    "neoskr.": {
+      "kind": "label",
+      "meaning": "neosanskrtski"
+    },
+    "ngrč.": {
+      "kind": "label",
+      "meaning": "novogrčki"
+    },
+    "nindij.": {
+      "kind": "label",
+      "meaning": "novoindijski"
+    },
+    "nizoz.": {
+      "kind": "label",
+      "meaning": "nizozemski"
+    },
+    "nlat.": {
+      "kind": "label",
+      "meaning": "novolatinski"
+    },
+    "nord.": {
+      "kind": "label",
+      "meaning": "nordijski"
+    },
+    "norv.": {
+      "kind": "label",
+      "meaning": "norveški"
+    },
+    "njem.": {
+      "kind": "label",
+      "meaning": "njemački"
+    },
+    "oset.": {
+      "kind": "label",
+      "meaning": "osetski"
+    },
+    "pali": {
+      "kind": "label",
+      "meaning": "pali"
+    },
+    "perz.": {
+      "kind": "label",
+      "meaning": "perzijski"
+    },
+    "polinez.": {
+      "kind": "label",
+      "meaning": "polinezijski"
+    },
+    "polj.": {
+      "kind": "label",
+      "meaning": "poljski"
+    },
+    "port.": {
+      "kind": "label",
+      "meaning": "portugalski"
+    },
+    "post.bibl.hebr.": {
+      "kind": "label",
+      "meaning": "postbiblijski hebrejski"
+    },
+    "prasl.": {
+      "kind": "label",
+      "meaning": "praslavenski"
+    },
+    "predslav.": {
+      "kind": "label",
+      "meaning": "predslavenski"
+    },
+    "protobug.": {
+      "kind": "label",
+      "meaning": "protobugarski"
+    },
+    "prov.": {
+      "kind": "label",
+      "meaning": "provansalski"
+    },
+    "pseudolat.": {
+      "kind": "label",
+      "meaning": "pseudolatinski"
+    },
+    "pseudošp.": {
+      "kind": "label",
+      "meaning": "pseudošpanjolski"
+    },
+    "punski": {
+      "kind": "label",
+      "meaning": "punski"
+    },
+    "rom.": {
+      "kind": "label",
+      "meaning": "romski"
+    },
+    "roman.": {
+      "kind": "label",
+      "meaning": "romanski"
+    },
+    "rum.": {
+      "kind": "label",
+      "meaning": "rumunjski"
+    },
+    "rus.": {
+      "kind": "label",
+      "meaning": "ruski"
+    },
+    "rus.cslav.": {
+      "kind": "label",
+      "meaning": "ruskocrkvenoslavenski"
+    },
+    "rusin.": {
+      "kind": "label",
+      "meaning": "rusinski"
+    },
+    "samoan.": {
+      "kind": "label",
+      "meaning": "samoanski"
+    },
+    "sicil.": {
+      "kind": "label",
+      "meaning": "sicilijanski"
+    },
+    "sinh.": {
+      "kind": "label",
+      "meaning": "sinhalski (sinhaleški)"
+    },
+    "sjevtal.": {
+      "kind": "label",
+      "meaning": "sjevernotalijanski"
+    },
+    "skand.": {
+      "kind": "label",
+      "meaning": "skandinavski"
+    },
+    "skr.": {
+      "kind": "label",
+      "meaning": "sanskrtski"
+    },
+    "sl.": {
+      "kind": "label",
+      "meaning": "slovački"
+    },
+    "somalijski": {
+      "kind": "label",
+      "meaning": "somalijski"
+    },
+    "srednjoindij.": {
+      "kind": "label",
+      "meaning": "srednjoindijski"
+    },
+    "srengl.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni engleski"
+    },
+    "srfr.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni francuski"
+    },
+    "srgrč.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni grčki"
+    },
+    "srir.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni irski"
+    },
+    "srlat.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni latinski"
+    },
+    "srnnjem.": {
+      "kind": "label",
+      "meaning": "srednjoniskonjemački"
+    },
+    "srprov.": {
+      "kind": "label",
+      "meaning": "srednjovjekovni provansalski"
+    },
+    "srvnjem.": {
+      "kind": "label",
+      "meaning": "srednjovisokonjemački"
+    },
+    "stčeš.": {
+      "kind": "label",
+      "meaning": "staročeški"
+    },
+    "stegip.": {
+      "kind": "label",
+      "meaning": "staroegipatski"
+    },
+    "stengl.": {
+      "kind": "label",
+      "meaning": "staroengleski"
+    },
+    "stfr.": {
+      "kind": "label",
+      "meaning": "starofrancuski"
+    },
+    "stgrč.": {
+      "kind": "label",
+      "meaning": "starogrčki"
+    },
+    "stindij.": {
+      "kind": "label",
+      "meaning": "staroindijski"
+    },
+    "stir.": {
+      "kind": "label",
+      "meaning": "staroirski"
+    },
+    "stisland.": {
+      "kind": "label",
+      "meaning": "staroislandski"
+    },
+    "stlit.": {
+      "kind": "label",
+      "meaning": "starolitvanski"
+    },
+    "stnizoz.": {
+      "kind": "label",
+      "meaning": "staronizozemski"
+    },
+    "stnord.": {
+      "kind": "label",
+      "meaning": "staronordijski"
+    },
+    "stnorv.": {
+      "kind": "label",
+      "meaning": "staronorveški"
+    },
+    "stperz.": {
+      "kind": "label",
+      "meaning": "staroperzijski"
+    },
+    "stpolj.": {
+      "kind": "label",
+      "meaning": "staropoljski"
+    },
+    "stprov.": {
+      "kind": "label",
+      "meaning": "staroprovansalski"
+    },
+    "stprus.": {
+      "kind": "label",
+      "meaning": "staropruski"
+    },
+    "strcsl.": {
+      "kind": "label",
+      "meaning": "starocrkvenoslavenski"
+    },
+    "strus.": {
+      "kind": "label",
+      "meaning": "staroruski"
+    },
+    "stskand.": {
+      "kind": "label",
+      "meaning": "staroskandinavski"
+    },
+    "stsl.": {
+      "kind": "label",
+      "meaning": "staroslavenski"
+    },
+    "stšp.": {
+      "kind": "label",
+      "meaning": "starošpanjolski"
+    },
+    "sttal.": {
+      "kind": "label",
+      "meaning": "starotalijanski"
+    },
+    "sttur.": {
+      "kind": "label",
+      "meaning": "staroturski"
+    },
+    "stvnjem.": {
+      "kind": "label",
+      "meaning": "starovisokonjemački"
+    },
+    "sudanski": {
+      "kind": "label",
+      "meaning": "sudanski"
+    },
+    "škot.": {
+      "kind": "label",
+      "meaning": "škotski"
+    },
+    "škot.gael.": {
+      "kind": "label",
+      "meaning": "škotski gaelski"
+    },
+    "škot.gal.": {
+      "kind": "label",
+      "meaning": "škotsko-galski"
+    },
+    "šp.": {
+      "kind": "label",
+      "meaning": "španjolski"
+    },
+    "švap.": {
+      "kind": "label",
+      "meaning": "švapski"
+    },
+    "šved.": {
+      "kind": "label",
+      "meaning": "švedski"
+    },
+    "švic.njem.": {
+      "kind": "label",
+      "meaning": "švicarski njemački"
+    },
+    "tadž.": {
+      "kind": "label",
+      "meaning": "tadžički"
+    },
+    "tagalog": {
+      "kind": "label",
+      "meaning": "tagalog"
+    },
+    "taj.": {
+      "kind": "label",
+      "meaning": "tajski"
+    },
+    "tajl.": {
+      "kind": "label",
+      "meaning": "tajlandski"
+    },
+    "tal.": {
+      "kind": "label",
+      "meaning": "talijanski"
+    },
+    "tamil.": {
+      "kind": "label",
+      "meaning": "tamilski"
+    },
+    "tat.": {
+      "kind": "label",
+      "meaning": "tatarski"
+    },
+    "tibet.": {
+      "kind": "label",
+      "meaning": "tibetski"
+    },
+    "tohar.": {
+      "kind": "label",
+      "meaning": "toharski"
+    },
+    "trački": {
+      "kind": "label",
+      "meaning": "trački"
+    },
+    "tupi": {
+      "kind": "label",
+      "meaning": "tupi"
+    },
+    "tur.": {
+      "kind": "label",
+      "meaning": "turski"
+    },
+    "tur.tat.": {
+      "kind": "label",
+      "meaning": "turskotatarski"
+    },
+    "turk.": {
+      "kind": "label",
+      "meaning": "turkijski"
+    },
+    "turkm.": {
+      "kind": "label",
+      "meaning": "turkmenski"
+    },
+    "ukr.": {
+      "kind": "label",
+      "meaning": "ukrajinski"
+    },
+    "urd.": {
+      "kind": "label",
+      "meaning": "urdski"
+    },
+    "velš.": {
+      "kind": "label",
+      "meaning": "velški"
+    },
+    "vijandot": {
+      "kind": "label",
+      "meaning": "vijandot"
+    },
+    "vijetn.": {
+      "kind": "label",
+      "meaning": "vijetnamski"
+    },
+    "zulu": {
+      "kind": "label",
+      "meaning": "zulu"
+    }
+  }
+}

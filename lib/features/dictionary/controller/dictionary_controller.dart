@@ -51,7 +51,7 @@ class DictionaryController extends ChangeNotifier {
       _loading = true;
       notifyListeners();
 
-      await _db.openReadOnly();
+      await _db.openReadWrite();
       await _loadFavorites();
       await _loadHistory();
 

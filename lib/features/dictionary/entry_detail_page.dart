@@ -7,6 +7,7 @@ import '../../data/dictionary_db.dart';
 import '../../data/models/entry_detail.dart';
 import '../../common/widgets/error_view.dart';
 import '../../common/widgets/loading_view.dart';
+import '../../data/models/related_word.dart';
 import 'widgets/entry_view.dart';
 
 class EntryDetailPage extends StatefulWidget {
@@ -38,6 +39,13 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
   String? _error;
   bool _loading = true;
 
+  List<RelatedWord> _relatedWords = const [];
+  int _relatedReverseOffset = 0;
+  bool _relatedHasMore = false;
+  bool _relatedLoadingMore = false;
+
+  static const int _relatedPageSize = 50;
+
   // AppBar animation state
   bool _barVisible = true;
   double _lastPixels = 0;
@@ -48,19 +56,128 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
     _load();
   }
 
+  Future<void> _loadRelatedOnDemand() async {
+    if (_relatedLoadingMore) return;
+
+    // If we have nothing yet, this is the first expand → load first page with strong signals.
+    if (_relatedWords.isEmpty && _relatedReverseOffset == 0) {
+      setState(() => _relatedLoadingMore = true);
+
+      try {
+        final page = await widget.db.relatedWordsPage(
+          widget.entryId,
+          reverseOffset: 0,
+          pageSize: _relatedPageSize,
+          includeStrong: true,
+        );
+
+        if (!mounted) return;
+        setState(() {
+          _relatedWords = page.items;
+          _relatedReverseOffset = page.nextReverseOffset;
+          _relatedHasMore = page.hasMore;
+          _relatedLoadingMore = false;
+        });
+      } catch (_) {
+        if (!mounted) return;
+        setState(() {
+          _relatedLoadingMore = false;
+          _relatedHasMore = false;
+        });
+      }
+      return;
+    }
+
+    // Otherwise normal pagination
+    await _loadMoreRelated();
+  }
+
   Future<void> _load() async {
     try {
       final e = await widget.db.getEntryById(widget.entryId);
+
+      if (!mounted) return;
       setState(() {
         _entry = e;
         _loading = false;
+        _error = null;
+        _relatedWords = const [];
+        _relatedLoadingMore = false;
+        _relatedHasMore = false;
+        _relatedReverseOffset = 0;
       });
+
       await widget.onAddToHistory(widget.entryId);
+
     } catch (ex) {
+      if (!mounted) return;
       setState(() {
         _error = ex.toString();
         _loading = false;
       });
+    }
+  }
+
+  Future<void> _loadRelatedInitial() async {
+    _relatedReverseOffset = 0;
+    _relatedHasMore = false;
+
+    try {
+      final page = await widget.db.relatedWordsPage(
+        widget.entryId,
+        reverseOffset: 0,
+        pageSize: _relatedPageSize,
+        includeStrong: true,
+      );
+
+      if (!mounted) return;
+      setState(() {
+        _relatedWords = page.items;
+        _relatedReverseOffset = page.nextReverseOffset;
+        _relatedHasMore = page.hasMore;
+        _relatedLoadingMore = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _relatedWords = const [];
+        _relatedHasMore = false;
+        _relatedLoadingMore = false;
+      });
+    }
+  }
+
+  Future<void> _loadMoreRelated() async {
+    if (_relatedLoadingMore || !_relatedHasMore) return;
+
+    setState(() => _relatedLoadingMore = true);
+
+    try {
+      final page = await widget.db.relatedWordsPage(
+        widget.entryId,
+        reverseOffset: _relatedReverseOffset,
+        pageSize: _relatedPageSize,
+        includeStrong: false,
+      );
+
+      if (!mounted) return;
+
+      // Deduplicate by id while appending
+      final existingIds = _relatedWords.map((e) => e.id).toSet();
+      final appended = <RelatedWord>[
+        ..._relatedWords,
+        ...page.items.where((w) => existingIds.add(w.id)),
+      ];
+
+      setState(() {
+        _relatedWords = appended;
+        _relatedReverseOffset = page.nextReverseOffset;
+        _relatedHasMore = page.hasMore;
+        _relatedLoadingMore = false;
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _relatedLoadingMore = false);
     }
   }
 
@@ -85,7 +202,7 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
     final fav = widget.isFavorite(widget.entryId);
 
     return Scaffold(
-      extendBodyBehindAppBar: true, // ✅ lets blur overlay the content behind
+      extendBodyBehindAppBar: true,
       appBar: FrostedAnimatedAppBar(
         visible: _barVisible,
         title: Text(_entry!.rijec),
@@ -108,11 +225,14 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
         ],
       ),
       body: SafeArea(
-        // ✅ keep top padding so content doesn't go under the frosted appbar too much
         top: true,
         child: EntryView(
           entry: _entry,
           onOpenWord: widget.onOpenWord,
+          relatedWords: _relatedWords,
+          relatedHasMore: _relatedHasMore,
+          relatedLoadingMore: _relatedLoadingMore,
+          onLoadMoreRelated: _loadRelatedOnDemand,
         ),
       ),
     );
@@ -147,7 +267,7 @@ class FrostedAnimatedAppBar extends StatelessWidget implements PreferredSizeWidg
       elevation: 0,
       scrolledUnderElevation: 0,
       backgroundColor: Colors.transparent,
-      // ✅ frosted blur background
+
       flexibleSpace: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
