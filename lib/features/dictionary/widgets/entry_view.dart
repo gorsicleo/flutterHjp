@@ -406,7 +406,6 @@ class _RelatedWordsSectionState extends State<_RelatedWordsSection> {
   void didUpdateWidget(covariant _RelatedWordsSection oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    // When items change (new page appended), see if we still can't scroll and need more.
     if (_expanded &&
         (oldWidget.items.length != widget.items.length ||
             oldWidget.hasMore != widget.hasMore ||
@@ -449,7 +448,6 @@ class _RelatedWordsSectionState extends State<_RelatedWordsSection> {
               itemCount: itemCount,
               separatorBuilder: (_, __) => const Divider(height: 1),
               itemBuilder: (context, i) {
-                // Footer row
                 if (i >= widget.items.length) {
                   if (widget.isLoadingMore) {
                     return const Padding(

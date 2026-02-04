@@ -42,7 +42,6 @@ class ReverseClassifyHit {
   );
 }
 
-/// Top-level function required by compute()
 List<Map<String, dynamic>> reverseClassifyWorker(Map<String, dynamic> json) {
   final input = ReverseClassifyInput.fromJson(json);
   final selfNorm = input.selfNorm;
@@ -50,9 +49,6 @@ List<Map<String, dynamic>> reverseClassifyWorker(Map<String, dynamic> json) {
   String stripHtml(String s) => s.replaceAll(RegExp(r'<[^>]+>'), ' ').replaceAll('&nbsp;', ' ');
   String collapse(String s) => s.replaceAll(RegExp(r'\s+'), ' ').trim();
 
-  // IMPORTANT: since isolates can’t access your normalize() directly,
-  // we assume `rows[i]['text']` and `selfNorm` are already normalized-ish.
-  // We'll still lowercase + collapse whitespace for safety.
   String prep(String s) => collapse(stripHtml(s).toLowerCase());
 
   final selfWordRe = RegExp(
@@ -61,7 +57,6 @@ List<Map<String, dynamic>> reverseClassifyWorker(Map<String, dynamic> json) {
     unicode: true,
   );
 
-  // Build one abbr regex once (fast)
   RegExp? abbrBeforeRe;
   final abbrKeys = input.abbrKeysNorm.toList()
     ..removeWhere((e) => e.trim().isEmpty)

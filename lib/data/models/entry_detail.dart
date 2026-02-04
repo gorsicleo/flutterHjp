@@ -2,7 +2,7 @@ class EntryDetail {
   final String rijec;
   final String vrsta;
   final String detaljiHtml;
-  final String definicijaHtml; // stored in DB as definicija_text (HTML-ish)
+  final String definicijaHtml;
   final String onomastikaHtml;
   final String sintagmaHtml;
   final String etimologijaHtml;

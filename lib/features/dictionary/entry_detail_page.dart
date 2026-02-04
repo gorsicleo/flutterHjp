@@ -46,9 +46,7 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
 
   static const int _relatedPageSize = 50;
 
-  // AppBar animation state
-  bool _barVisible = true;
-  double _lastPixels = 0;
+  final bool _barVisible = true;
 
   @override
   void initState() {
@@ -59,7 +57,6 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
   Future<void> _loadRelatedOnDemand() async {
     if (_relatedLoadingMore) return;
 
-    // If we have nothing yet, this is the first expand → load first page with strong signals.
     if (_relatedWords.isEmpty && _relatedReverseOffset == 0) {
       setState(() => _relatedLoadingMore = true);
 
@@ -87,8 +84,6 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
       }
       return;
     }
-
-    // Otherwise normal pagination
     await _loadMoreRelated();
   }
 
@@ -118,35 +113,6 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
     }
   }
 
-  Future<void> _loadRelatedInitial() async {
-    _relatedReverseOffset = 0;
-    _relatedHasMore = false;
-
-    try {
-      final page = await widget.db.relatedWordsPage(
-        widget.entryId,
-        reverseOffset: 0,
-        pageSize: _relatedPageSize,
-        includeStrong: true,
-      );
-
-      if (!mounted) return;
-      setState(() {
-        _relatedWords = page.items;
-        _relatedReverseOffset = page.nextReverseOffset;
-        _relatedHasMore = page.hasMore;
-        _relatedLoadingMore = false;
-      });
-    } catch (_) {
-      if (!mounted) return;
-      setState(() {
-        _relatedWords = const [];
-        _relatedHasMore = false;
-        _relatedLoadingMore = false;
-      });
-    }
-  }
-
   Future<void> _loadMoreRelated() async {
     if (_relatedLoadingMore || !_relatedHasMore) return;
 
@@ -162,7 +128,6 @@ class _EntryDetailPageState extends State<EntryDetailPage> {
 
       if (!mounted) return;
 
-      // Deduplicate by id while appending
       final existingIds = _relatedWords.map((e) => e.id).toSet();
       final appended = <RelatedWord>[
         ..._relatedWords,

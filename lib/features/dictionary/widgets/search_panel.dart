@@ -215,7 +215,7 @@ class _AnimatedIn extends StatelessWidget {
         return Opacity(
           opacity: t,
           child: Transform.translate(
-            offset: Offset(0, (1 - t) * 8), // tiny slide
+            offset: Offset(0, (1 - t) * 8),
             child: child,
           ),
         );

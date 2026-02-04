@@ -31,11 +31,9 @@ class _DictionaryPageState extends State<DictionaryPage> {
   }
 
   Future<void> _initProcessTextListener() async {
-    // App cold-started from text selection
     final intent = await android_intent.ReceiveIntent.getInitialIntent();
     _handleProcessTextIntent(intent);
 
-    // App already running, receives new intent
     android_intent.ReceiveIntent.receivedIntentStream.listen((intent) {
       _handleProcessTextIntent(intent);
     });
@@ -48,15 +46,7 @@ class _DictionaryPageState extends State<DictionaryPage> {
     if (q == null || q.trim().isEmpty) return;
 
     final query = q.trim();
-
-    // 1️⃣ Ensure we are on the search page (we already are)
-    // If you later add navigation, this still works.
-
-    // 2️⃣ Fill search bar + run search immediately
     controller.setQueryFromExternal(query);
-
-    // 3️⃣ Optional UX polish: scroll to top / focus search
-    // (not required)
   }
 
 

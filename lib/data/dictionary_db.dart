@@ -4,10 +4,8 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:math';
-import 'dart:collection';
-import 'package:flutter/foundation.dart'; // compute
+import 'package:flutter/foundation.dart';
 import '../features/related/reverse_classify_worker.dart';
-
 
 import '../features/related/related_words_parser.dart';
 import 'abbr/abbr_loader.dart';
@@ -43,15 +41,12 @@ class DictionaryDb {
     final s = sql.trim();
     if (s.isEmpty) return [];
 
-    // If it's a SELECT, return rows
     final lower = s.toLowerCase();
     if (lower.startsWith('select') || lower.startsWith('with')) {
       final rows = await db.rawQuery(s);
       return rows;
     }
 
-    // Otherwise execute (CREATE/UPDATE/DELETE/etc.)
-    // NOTE: sqflite execute() does not return affected rows.
     await db.execute(s);
     return const [];
   }
@@ -62,7 +57,6 @@ class DictionaryDb {
     final s = sql.trim();
     if (s.isEmpty) return [];
 
-    // Soft limit for SELECT if user didn't specify limit.
     final lower = s.toLowerCase();
     final withLimit =
     (lower.startsWith('select') || lower.startsWith('with')) && !lower.contains(' limit ')
@@ -86,7 +80,6 @@ class DictionaryDb {
     final s = sql.trim();
     if (s.isEmpty) return [];
 
-    // Safety: only allow SELECT queries (no inserts/updates/drops)
     final lower = s.toLowerCase();
     if (!lower.startsWith('select')) {
       throw ArgumentError('Only SELECT queries are allowed.');
@@ -103,14 +96,12 @@ class DictionaryDb {
       throw ArgumentError('Only plain SELECT queries are allowed.');
     }
 
-    // Make it convenient: if user didn’t limit results, apply a limit.
     final withLimit = lower.contains(' limit ')
         ? s
         : '$s LIMIT $limit';
 
     final rows = await db.rawQuery(withLimit);
 
-    // Expect: id, rijec, vrsta (but be forgiving)
     return rows.map((r) {
       return SearchResultRow(
         id: (r['id'] ?? '').toString(),
@@ -295,7 +286,6 @@ class DictionaryDb {
   Future<List<RelatedWord>> relatedWords(String entryId, {int limit = 25}) async {
     final db = _requireDb;
 
-    // 1) Load the current entry core fields
     final curRows = await db.rawQuery('''
     SELECT id, rijec_norm, definicija_text, etimologija_html
     FROM entries
@@ -312,8 +302,7 @@ class DictionaryDb {
 
     if (selfNorm.isEmpty) return const [];
 
-    // IMPORTANT: use your app's normalize() (now updated to match DB)
-    String n(String s) => normalize(s); // <-- ensure this is in scope
+    String n(String s) => normalize(s);
 
     // 2) Extract candidate norms
     final candidates = <String>{};
@@ -322,7 +311,6 @@ class DictionaryDb {
     candidates.addAll(_extractNormTermsFromLinks(etimHtml, n));
     candidates.addAll(_extractNormTermsFromSemicolonTail(definicijaText, n));
 
-    // Remove self if present
     candidates.remove(selfNorm);
 
     // 3) Resolve extracted candidates via IN query
@@ -347,7 +335,7 @@ class DictionaryDb {
           id: id,
           rijec: (r['rijec'] ?? '').toString(),
           vrsta: (r['vrsta'] ?? '').toString(),
-          score: 0.95, // extracted links / semicolon tail (strong)
+          score: 0.95,
         );
       }
     }
@@ -372,7 +360,6 @@ class DictionaryDb {
       final id = (r['id'] ?? '').toString();
       if (id.isEmpty || id == entryId) continue;
 
-      // Don’t overwrite strong results
       resultsById.putIfAbsent(
         id,
             () => RelatedWord(
@@ -671,11 +658,6 @@ class DictionaryDb {
     return path;
   }
 
-  // String _stripHtml(String input) {
-  //   // Simple HTML stripper good enough for definitions
-  //   return input.replaceAll(RegExp(r'<[^>]+>'), ' ');
-  // }
-
   Set<String> _extractNormTermsFromLinks(String htmlOrText, String Function(String) normalize) {
     final out = <String>{};
 
@@ -739,106 +721,11 @@ class DictionaryDb {
   }
 
   String _stripHtml(String input) => input.replaceAll(RegExp(r'<[^>]+>'), ' ');
-
-  String _plainNorm(String s) {
-    // Strip HTML, lowercase, normalize, collapse whitespace
-    final plain = _stripHtml(s).replaceAll('&nbsp;', ' ');
-    return normalize(plain).replaceAll(RegExp(r'\s+'), ' ').trim();
-  }
-
-  String _escapeRe(String s) => RegExp.escape(s);
-
-  /// Robustly classify one entry's combined text against selfNorm.
-  /// Uses ALL abbreviations from your abbr registry (your "reduced to ~100" list).
-  _ReverseHit _classifyReverseText({
-  required String combinedNormText,
-  required String selfNorm,
-  }) {
-  // Whole-word match for selfNorm (Croatian letters supported).
-  // (?<!\p{L}) and (?!\p{L}) = not preceded/followed by a letter.
-  final selfWordRe = RegExp(
-  r'(?<!\p{L})' + _escapeRe(selfNorm) + r'(?!\p{L})',
-  caseSensitive: false,
-  unicode: true,
-  );
-
-  // Link patterns (still useful because they are strong + common)
-  final linkScore = 0.72;
-  final linkReasons = <String>{};
-  if (combinedNormText.contains('/r/$selfNorm') || combinedNormText.contains('keyword=$selfNorm')) {
-  linkReasons.add('(link → this)');
-  }
-
-  // Build a regex that matches: "<abbr> ... selfNorm"
-  // We use ALL abbr keys from your registry, but you can restrict to relation-only if you want.
-  // NOTE: since your abbr.json is reduced, this stays manageable.
-  final abbrKeys = _abbr!.map.keys
-      .map((k) => normalize(k).toLowerCase().trim())
-      .where((k) => k.isNotEmpty)
-      .toSet()
-      .toList()
-  ..sort((a, b) => b.length.compareTo(a.length)); // longer first
-
-  // If no abbreviations loaded, skip
-  RegExp? abbrBeforeRe;
-  if (abbrKeys.isNotEmpty) {
-  final abbrAlt = abbrKeys.map(_escapeRe).join('|');
-
-  // Example matches (normalized text):
-  // "usp. dispozicija", "v. dispozicija", "opr. dispozicija"
-  // allow 0..20 chars between abbr and selfNorm (covers "usp. također ..." etc)
-  abbrBeforeRe = RegExp(
-  r'(?<!\p{L})(' + abbrAlt + r')\s*[:.]?\s{0,3}.{0,20}?(?<!\p{L})' +
-  _escapeRe(selfNorm) +
-  r'(?!\p{L})',
-  caseSensitive: false,
-  unicode: true,
-  dotAll: true,
-  );
-  }
-
-  final reasons = <String>{};
-  double score = 0.0;
-
-  // 1) Abbreviation-based reference (stronger than plain mention)
-  if (abbrBeforeRe != null) {
-  final m = abbrBeforeRe.firstMatch(combinedNormText);
-  if (m != null) {
-  final abbr = (m.group(1) ?? '').trim();
-  if (abbr.isNotEmpty) {
-  // Show exactly the abbreviation the entry used
-  reasons.add('(${abbr} → this)');
-  score = score < 0.70 ? 0.70 : score;
-  }
-  }
-  }
-
-  // 2) Explicit link
-  if (linkReasons.isNotEmpty) {
-  reasons.addAll(linkReasons);
-  score = score < linkScore ? linkScore : score;
-  }
-
-  // 3) Plain mention (optional, but gives you “waaay more results”)
-  if (selfWordRe.hasMatch(combinedNormText)) {
-  reasons.add('(mentions)');
-  score = score < 0.55 ? 0.55 : score;
-  }
-
-  return _ReverseHit(score, reasons);
-  }
-
 }
 
 // small internal helper class
 class _Agg {
   double maxScore = 0.0;
   final Set<String> reasons = {};
-}
-
-class _ReverseHit {
-  final double score;
-  final Set<String> reasons; // already formatted like "(usp. → this)"
-  const _ReverseHit(this.score, this.reasons);
 }
 

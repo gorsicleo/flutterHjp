@@ -1,7 +1,6 @@
 import 'dart:collection';
 
-import '../../data/abbr/abbr_loader.dart'; // <-- adjust to your real path
-import '../../data/normalize.dart';         // <-- adjust: where your normalize() lives
+import '../../data/abbr/abbr_loader.dart';
 
 enum RelatedReason {
   seeAlso,        // v.
@@ -14,10 +13,10 @@ enum RelatedReason {
 }
 
 class RelatedMention {
-  final String termNorm;       // normalized candidate (rijec_norm style)
+  final String termNorm;
   final RelatedReason reason;
   final double confidence;
-  final String sourceField;    // definicija/etimologija/...
+  final String sourceField;
 
   const RelatedMention({
     required this.termNorm,
@@ -48,7 +47,6 @@ class RelatedWordsParser {
     _allAbbrLower = abbr.map.keys.map((k) => k.trim().toLowerCase()).toSet();
   }
 
-  /// Parse a set of fields (call this from your DB "includeStrong" part).
   List<RelatedMention> parseAll({
     required String definicija,
     required String etimologija,
@@ -65,7 +63,6 @@ class RelatedWordsParser {
     return _dedupe(out);
   }
 
-  /// Parse one field (HTML or plain text).
   List<RelatedMention> parseField(String raw, {required String sourceField}) {
     final s = raw.trim();
     if (s.isEmpty) return const [];
@@ -75,7 +72,6 @@ class RelatedWordsParser {
     // A) Strong: HTML links (/r/... or keyword=...)
     out.addAll(_extractFromHtmlLinks(s, sourceField));
 
-    // Convert once to plain text for text-based heuristics
     final plain = _stripHtml(s);
 
     // B) Marker patterns in plain text: "usp. X", "v. X", "opr. X", "izv. X"
@@ -103,7 +99,6 @@ class RelatedWordsParser {
       final norm = normalizeFn(term);
       if (!_isCandidate(norm)) continue;
 
-      // Look back before the link to detect marker like "usp." / "v." etc.
       final start = m.start;
       final lookbackStart = (start - 90) < 0 ? 0 : (start - 90);
       final lookbackRaw = raw.substring(lookbackStart, start);
@@ -130,7 +125,6 @@ class RelatedWordsParser {
     final textLower = plain.toLowerCase();
 
     for (final abbrLower in _relationAbbrsLower) {
-      // Capture text after marker until punctuation/end of line
       final re = RegExp(
         r'(?<!\w)' + RegExp.escape(abbrLower) + r'\s+([^.;\n]+)',
         caseSensitive: false,
@@ -184,7 +178,6 @@ class RelatedWordsParser {
 
   String _stripHtml(String input) => input.replaceAll(RegExp(r'<[^>]+>'), ' ');
 
-  /// Extract dictionary term from "/r/xxx" or "?keyword=xxx"
   String? _extractDictionaryTerm(String? url) {
     if (url == null) return null;
     final u = url.trim();
@@ -255,14 +248,12 @@ class RelatedWordsParser {
     var t = s.trim();
     if (t.isEmpty) return const [];
 
-    // Remove bracketed examples and punctuation noise
     t = t.replaceAll(RegExp(r'\[[^\]]*\]'), ' ');
     t = t.replaceAll(RegExp(r'[(){}"“”„”]'), ' ');
     t = t.replaceAll(RegExp(r'[:.!?]'), ' ');
     t = t.replaceAll(RegExp(r'\s+'), ' ').trim();
     if (t.isEmpty) return const [];
 
-    // Split by comma, slash, or conjunctions "i"/"odnosno"
     final pieces = t.split(RegExp(
       r'\s*(?:,|/|\bi\b|\bodnosno\b)\s*',
       caseSensitive: false,
@@ -285,7 +276,6 @@ class RelatedWordsParser {
   }
 
   List<RelatedMention> _dedupe(List<RelatedMention> items) {
-    // keep max confidence per (termNorm + reason + sourceField)
     final map = LinkedHashMap<String, RelatedMention>();
     for (final m in items) {
       final key = '${m.termNorm}|${m.reason}|${m.sourceField}';

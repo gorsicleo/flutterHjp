@@ -194,7 +194,7 @@ class DictionaryController extends ChangeNotifier {
       final h = await _db.entryHeaderById(id);
       if (h != null) items.add(h);
     }
-    _historyHeaders = items; // keep history order (most recent first)
+    _historyHeaders = items;
   }
 
   /// Called from Android "Process text" intent.
@@ -203,18 +203,12 @@ class DictionaryController extends ChangeNotifier {
     final q = raw.trim();
     if (q.isEmpty) return;
 
-    // Stop pending debounce search (if user was typing)
     _debounce?.cancel();
-
-    // Update query so SearchBar gets prefilled
     _query = q;
-
-    // Optionally clear old results first so UI feels responsive
     _results = [];
     _suggestions = [];
     notifyListeners();
 
-    // Run search immediately
     await _search(q);
   }
 

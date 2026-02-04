@@ -10,7 +10,6 @@ class FormsTable extends StatelessWidget {
   Widget build(BuildContext context) {
     final parsed = _tryJsonDecode(izvedeniJson);
 
-    // If not JSON (or null), still show something + allow copy
     if (parsed == null || parsed is String) {
       return Card(
         child: SizedBox(
@@ -151,7 +150,7 @@ String _labelKey(String k) {
     "drugoLice": "2. lice",
     "treceLice": "3. lice",
 
-    // verb-ish headings (examples – add more if you like)
+    // verb-ish headings
     "infinitiv": "Infinitiv",
     "prezent": "Prezent",
     "Prezent": "Prezent",
@@ -204,15 +203,15 @@ class _NodeView extends StatelessWidget {
     }
 
     if (decoded is Map) {
-      // ✅ Case tables
+      // Case tables
       if (_looksLikeCaseTable(decoded)) {
         children.add(_CaseTable(map: decoded.cast<String, dynamic>()));
       }
-      // ✅ Verb-person tables (prvo/drugo/trece lice)
+      // Verb-person tables
       else if (_looksLikePersonTable(decoded)) {
         children.add(_PersonTable(map: decoded.cast<String, dynamic>()));
       }
-      // ✅ Verb tenses: if it contains both jednina & mnozina, render as tabs
+      // Verb tenses
       else if (_looksLikeNumberTabs(decoded)) {
         final m = decoded.cast<String, dynamic>();
         children.add(_NumberTabs(
@@ -307,7 +306,6 @@ class _NodeView extends StatelessWidget {
     final mn = _tryJsonDecode(m["mnozina"]);
     final complex = (j is Map || j is List) && (mn is Map || mn is List);
 
-    // If jednina itself is a pure case-table map, prefer the case-table rendering.
     if (j is Map && _looksLikeCaseTable(j)) return false;
     if (mn is Map && _looksLikeCaseTable(mn)) return false;
 
@@ -315,7 +313,6 @@ class _NodeView extends StatelessWidget {
   }
 }
 
-/// Tabs widget for Jednina/Množina (verb tenses)
 class _NumberTabs extends StatelessWidget {
   final dynamic jednina;
   final dynamic mnozina;
@@ -541,7 +538,7 @@ String _toPlainText(dynamic node, {int indent = 0}) {
     for (var i = 0; i < decoded.length; i++) {
       final v = _tryJsonDecode(decoded[i]);
       if (v is Map || v is List) {
-        buf.writeln('${pad}-');
+        buf.writeln('$pad-');
         buf.write(_toPlainText(v, indent: indent + 1));
       } else {
         buf.writeln('$pad- ${v ?? ""}');

@@ -12,5 +12,4 @@ class RelatedWord {
     required this.score,
     this.reason = '',
   });
-
 }

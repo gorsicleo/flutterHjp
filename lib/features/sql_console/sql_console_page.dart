@@ -77,7 +77,7 @@ ORDER BY rijec_norm
             await _store.deleteById(it.id);
             await _loadSaved();
             if (Navigator.canPop(ctx)) Navigator.pop(ctx);
-            // Re-open to reflect updated list (simple approach)
+
             if (mounted) _openSavedSheet();
           },
           onRename: (it) async {
