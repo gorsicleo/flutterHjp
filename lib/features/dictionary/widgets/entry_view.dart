@@ -99,7 +99,7 @@ class EntryView extends StatelessWidget {
             const SizedBox(height: 16),
             _AnimatedBlock(
               delay: const Duration(milliseconds: 60),
-              child: Text('Definicija', style: theme.textTheme.titleMedium),
+              child: Text('Definition', style: theme.textTheme.titleMedium),
             ),
             const SizedBox(height: 8),
             _AnimatedBlock(
@@ -111,7 +111,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 110),
-                child: Text('Frazeologija', style: theme.textTheme.titleMedium),
+                child: Text('Phraseology', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -124,7 +124,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 150),
-                child: Text('Sintagma', style: theme.textTheme.titleMedium),
+                child: Text('Syntagm', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -140,7 +140,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 190),
-                child: Text('Izvedeni oblici', style: theme.textTheme.titleMedium),
+                child: Text('Derived forms', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -153,7 +153,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 270),
-                child: Text('Onomastika', style: theme.textTheme.titleMedium),
+                child: Text('Onomastics', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -166,7 +166,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 230),
-                child: Text('Etimologija', style: theme.textTheme.titleMedium),
+                child: Text('Etymology', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -177,7 +177,7 @@ class EntryView extends StatelessWidget {
               const SizedBox(height: 16),
               _AnimatedBlock(
                 delay: const Duration(milliseconds: 220),
-                child: Text('Povezane riječi', style: theme.textTheme.titleMedium),
+                child: Text('Related words', style: theme.textTheme.titleMedium),
               ),
               const SizedBox(height: 8),
               _AnimatedBlock(
@@ -425,8 +425,8 @@ class _RelatedWordsSectionState extends State<_RelatedWordsSection> {
       child: ExpansionTile(
         title: Text(
           widget.items.isNotEmpty
-              ? 'Povezane riječi (${widget.items.length})'
-              : 'Povezane riječi — započni pretragu',
+              ? 'Related words (${widget.items.length})'
+              : 'Related words — tap to search',
         ),
         initiallyExpanded: false,
         onExpansionChanged: (v) {

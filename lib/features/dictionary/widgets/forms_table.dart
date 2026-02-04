@@ -20,7 +20,7 @@ class FormsTable extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _HeaderRow(
-                  title: 'Izvedeni oblici',
+                  title: 'Derived forms',
                   onCopy: () => _copy(context, izvedeniJson),
                 ),
                 const SizedBox(height: 8),
@@ -40,11 +40,6 @@ class FormsTable extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _HeaderRow(
-                title: 'Izvedeni oblici',
-                onCopy: () => _copy(context, _toPlainText(parsed)),
-              ),
-              const SizedBox(height: 8),
               _NodeView(
                 title: null,
                 node: parsed,

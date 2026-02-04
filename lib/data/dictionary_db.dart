@@ -9,6 +9,7 @@ import '../features/related/reverse_classify_worker.dart';
 
 import '../features/related/related_words_parser.dart';
 import 'abbr/abbr_loader.dart';
+import 'models/kalodont_word.dart';
 import 'models/related_word.dart';
 import 'models/related_word_page.dart';
 import 'models/search_result.dart';
@@ -721,9 +722,209 @@ class DictionaryDb {
   }
 
   String _stripHtml(String input) => input.replaceAll(RegExp(r'<[^>]+>'), ' ');
+
+  // kalodont game helpers
+
+  final Random _rng = Random();
+
+  static final RegExp _kalodontNumSuffixRe =
+  RegExp(r'[\d\u00B9\u00B2\u00B3\u2070-\u2079]+$');
+
+  String _stripKalodontNumSuffix(String s) =>
+      s.trim().replaceAll(_kalodontNumSuffixRe, '');
+
+  Future<String?> kalodontDefinitionTextByBaseNorm(String baseNorm) async {
+    final db = _requireDb;
+    final bn = _stripKalodontNumSuffix(baseNorm);
+    if (bn.isEmpty) return null;
+
+    final rows = await db.rawQuery('''
+    SELECT definicija_text
+    FROM entries
+    WHERE rijec_norm = ?
+       OR (
+         rijec_norm LIKE ?
+         AND length(rijec_norm) > length(?)
+         AND substr(rijec_norm, length(?) + 1) NOT GLOB '*[^0-9]*'
+       )
+    ORDER BY LENGTH(rijec) ASC
+    LIMIT 1
+  ''', [bn, '$bn%', bn, bn]);
+
+    if (rows.isEmpty) return null;
+    return (rows.first['definicija_text'] as String?)?.trim();
+  }
+
+  String _kalodontBaseFilter({bool avoidKaEnd = false}) {
+    final avoid = avoidKaEnd
+        ? "AND substr(rijec_norm, length(rijec_norm) - 1, 2) != 'ka'"
+        : '';
+    return '''
+    rijec_norm IS NOT NULL
+    AND length(rijec_norm) >= 2
+    AND rijec_norm NOT LIKE '% %'
+    AND rijec_norm NOT GLOB '*[^a-z0-9]*'
+    $avoid
+  ''';
+  }
+
+  Future<String?> kalodontCanonicalWordForBaseNorm(String baseNorm) async {
+    final db = _requireDb;
+    final bn = baseNorm.trim();
+    if (bn.isEmpty) return null;
+
+    final rows = await db.rawQuery('''
+    SELECT rijec
+    FROM entries
+    WHERE rijec_norm = ?
+       OR (
+         rijec_norm LIKE ?
+         AND length(rijec_norm) > length(?)
+         AND substr(rijec_norm, length(?) + 1) NOT GLOB '*[^0-9]*'
+       )
+    ORDER BY LENGTH(rijec) ASC
+    LIMIT 1
+  ''', [bn, '$bn%', bn, bn]);
+
+    if (rows.isEmpty) return null;
+    final w = (rows.first['rijec'] as String?)?.trim();
+    if (w == null || w.isEmpty) return null;
+
+    return _stripKalodontNumSuffix(w);
+  }
+
+  Future<bool> kalodontExistsNorm(String norm) async {
+    final db = _requireDb;
+    final rows = await db.rawQuery(
+      'SELECT 1 FROM entries WHERE rijec_norm = ? LIMIT 1',
+      [norm],
+    );
+    return rows.isNotEmpty;
+  }
+
+  Future<String?> kalodontDisplayForNorm(String norm) async {
+    final db = _requireDb;
+    final rows = await db.rawQuery(
+      'SELECT rijec FROM entries WHERE rijec_norm = ? ORDER BY LENGTH(rijec) ASC LIMIT 1',
+      [norm],
+    );
+    if (rows.isEmpty) return null;
+    return (rows.first['rijec'] as String?)?.trim();
+  }
+
+  Future<KalodontWord?> kalodontRandomStartWord({bool avoidEndingKa = true}) async {
+    final db = _requireDb;
+    final filter = _kalodontBaseFilter(avoidKaEnd: avoidEndingKa);
+
+    final cRows = await db.rawQuery('SELECT COUNT(*) AS c FROM entries WHERE $filter');
+    final count = (cRows.first['c'] as int?) ?? 0;
+    if (count <= 0) return null;
+
+    final offset = _rng.nextInt(count);
+
+    final rows = await db.rawQuery('''
+    SELECT rijec, rijec_norm
+    FROM entries
+    WHERE $filter
+    ORDER BY rowid
+    LIMIT 1 OFFSET ?
+  ''', [offset]);
+
+    if (rows.isEmpty) return null;
+    final word = _stripKalodontNumSuffix((rows.first['rijec'] as String?)?.trim() ?? '');
+    final norm = _stripKalodontNumSuffix((rows.first['rijec_norm'] as String?)?.trim() ?? '');
+    if (word.isEmpty || norm.isEmpty) return null;
+    return KalodontWord(word: word, norm: norm);
+  }
+
+  Future<KalodontWord?> kalodontRandomWordByPrefix(
+      String prefix2,
+      Set<String> usedNorms, {
+        int batchSize = 200,
+      }) async {
+    final db = _requireDb;
+    final pfx = prefix2.trim().toLowerCase();
+    if (pfx.length != 2) return null;
+
+    final filter = _kalodontBaseFilter();
+    final likeArg = '$pfx%';
+
+    final cRows = await db.rawQuery(
+      'SELECT COUNT(*) AS c FROM entries WHERE $filter AND rijec_norm LIKE ?',
+      [likeArg],
+    );
+    final count = (cRows.first['c'] as int?) ?? 0;
+    if (count <= 0) return null;
+
+    final startOffset = _rng.nextInt(count);
+    final startRows = await db.rawQuery(
+      'SELECT rowid AS rid FROM entries WHERE $filter AND rijec_norm LIKE ? ORDER BY rowid LIMIT 1 OFFSET ?',
+      [likeArg, startOffset],
+    );
+    final startRid = (startRows.isNotEmpty ? startRows.first['rid'] as int? : null) ?? 0;
+
+    KalodontWord? pickFromRows(List<Map<String, Object?>> rows) {
+      for (final r in rows) {
+        final normRaw = (r['rijec_norm'] as String?)?.trim() ?? '';
+        final norm = _stripKalodontNumSuffix(normRaw);
+        if (norm.length < 2) continue;
+        if (usedNorms.contains(norm)) continue;
+
+        final wordRaw = (r['rijec'] as String?)?.trim() ?? '';
+        final word = _stripKalodontNumSuffix(wordRaw);
+        if (word.isEmpty) continue;
+
+        return KalodontWord(word: word, norm: norm);
+      }
+      return null;
+    }
+
+    int scanned = 0;
+
+    int cursor = startRid;
+    while (scanned < count) {
+      final rows = await db.rawQuery('''
+      SELECT rowid AS rid, rijec, rijec_norm
+      FROM entries
+      WHERE $filter AND rijec_norm LIKE ? AND rowid >= ?
+      ORDER BY rowid
+      LIMIT ?
+    ''', [likeArg, cursor, batchSize]);
+
+      if (rows.isEmpty) break;
+      scanned += rows.length;
+
+      final picked = pickFromRows(rows);
+      if (picked != null) return picked;
+
+      final lastRid = (rows.last['rid'] as int?) ?? cursor;
+      cursor = lastRid + 1;
+    }
+
+    cursor = 0;
+    while (scanned < count) {
+      final rows = await db.rawQuery('''
+      SELECT rowid AS rid, rijec, rijec_norm
+      FROM entries
+      WHERE $filter AND rijec_norm LIKE ? AND rowid < ? AND rowid >= ?
+      ORDER BY rowid
+      LIMIT ?
+    ''', [likeArg, startRid, cursor, batchSize]);
+
+      if (rows.isEmpty) break;
+      scanned += rows.length;
+
+      final picked = pickFromRows(rows);
+      if (picked != null) return picked;
+
+      final lastRid = (rows.last['rid'] as int?) ?? cursor;
+      cursor = lastRid + 1;
+    }
+
+    return null;
+  }
 }
 
-// small internal helper class
 class _Agg {
   double maxScore = 0.0;
   final Set<String> reasons = {};

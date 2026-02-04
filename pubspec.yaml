@@ -71,12 +71,13 @@ flutter:
      - assets/dictionary.sqlite
      - assets/abbr/abbr.json
 
-
-flutter_launcher_icons:
+flutter_icons:
   android: true
-  image_path: assets/icon/app_icon.png
-  adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: assets/icon/app_icon.png
+  ios: true
+  image_path_android: "assets/icon/android-adaptive/ic_launcher_foreground.png"
+  image_path_ios: "assets/icon/ios/AppIcon-1024.png"
+  adaptive_icon_background: "assets/icon/android-adaptive/ic_launcher_background.png"
+  adaptive_icon_foreground: "assets/icon/android-adaptive/ic_launcher_foreground.png"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

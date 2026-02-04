@@ -10,6 +10,7 @@ class SearchPanel extends StatefulWidget {
 
   final void Function(String) onQueryChanged;
   final VoidCallback onClear;
+  final VoidCallback onOpenGames;
 
   final void Function(String entryId) onOpen;
 
@@ -33,6 +34,7 @@ class SearchPanel extends StatefulWidget {
     required this.query,
     required this.onQueryChanged,
     required this.onClear,
+    required this.onOpenGames,
     required this.onOpen,
     required this.showHomeOptions,
     required this.onOpenWordOfTheDay,
@@ -176,7 +178,7 @@ class _SearchPanelState extends State<SearchPanel> {
               key: const ValueKey('home'),
               child: _HomeOptions(
                 onWordOfTheDay: widget.onOpenWordOfTheDay,
-
+                onGames: widget.onOpenGames,
                 favorites: widget.favoriteHeaders,
                 history: widget.historyHeaders,
                 onOpen: widget.onOpen,
@@ -316,10 +318,11 @@ class _HomeOptions extends StatelessWidget {
   final List<Map<String, String>> history;
   final void Function(String entryId) onOpen;
   final VoidCallback onClearHistory;
+  final VoidCallback onGames;
 
   const _HomeOptions({
     required this.onWordOfTheDay,
-
+    required this.onGames,
     required this.favorites,
     required this.history,
     required this.onOpen,
@@ -374,7 +377,19 @@ class _HomeOptions extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-
+        // Word games
+        _AnimatedIn(
+          child: Card(
+            child: ListTile(
+              leading: const Icon(Icons.videogame_asset),
+              title: const Text('Games'),
+              subtitle: const Text('Play word games'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => onGames(),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
         // Saved
         headerRow('Saved words'),
         const SizedBox(height: 8),

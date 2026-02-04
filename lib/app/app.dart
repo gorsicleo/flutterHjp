@@ -7,7 +7,7 @@ class HjpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'HJP Dictionary',
+      title: 'Croatian dictionary',
       theme: ThemeData(
         useMaterial3: true,
         colorSchemeSeed: Colors.blue,

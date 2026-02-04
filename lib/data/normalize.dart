@@ -16,3 +16,8 @@ String normalize(String input) {
 
   return s;
 }
+
+final _numSuffixRe = RegExp(r'[\d\u00B9\u00B2\u00B3\u2070-\u2079]+$');
+
+String stripNumSuffix(String s) => s.trim().replaceAll(_numSuffixRe, '');
+

@@ -4,6 +4,7 @@ import '../../common/widgets/error_view.dart';
 import '../../common/widgets/loading_view.dart';
 import '../../data/dictionary_db.dart';
 import 'package:receive_intent/receive_intent.dart' as android_intent;
+import '../games/games_page.dart';
 import 'controller/dictionary_controller.dart';
 import 'entry_detail_page.dart';
 import '../sql_console/sql_console_page.dart';
@@ -100,11 +101,21 @@ class _DictionaryPageState extends State<DictionaryPage> {
     await _openEntry(id);
   }
 
+  Future<void> _openGames() async {
+    if (!mounted) return;
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => GamesPage(
+        db: controller.db,
+        onOpenWord: _openWord,
+      ))
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HJP Dictionary'),
+        title: const Text('Croatian Dictionary'),
         actions: [
           IconButton(
             tooltip: 'SQL console',
@@ -150,7 +161,8 @@ class _DictionaryPageState extends State<DictionaryPage> {
             onClearHistory: controller.clearHistory,
 
             isFavorite: controller.isFavorite,
-            onToggleFavorite: controller.toggleFavorite
+            onToggleFavorite: controller.toggleFavorite,
+            onOpenGames: _openGames,
           );
         },
       ),
